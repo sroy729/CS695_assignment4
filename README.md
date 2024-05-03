@@ -1,7 +1,7 @@
-#Docker container migration 
+# Docker container migration 
 The aim of the project to checkpoint and migrate docker container and have evaluate there performance
 
-##How to checkpoint 
+## How to checkpoint 
 
 ```bash
 docker run -d --name looper2 busybox \
@@ -17,7 +17,7 @@ docker start --checkpoint=checkpoint2 looper2
 We were able to ckeckpoint and restore docker container 
 
 
-##Observation 
+## Observation 
 
 We tried to checkpoint a running server client relationship. The server was running inside a docker container and the client was
 running on a different system that is on the same intranet with the server.
@@ -29,13 +29,13 @@ checkpoint server docker container. But when the server is serving no request it
 we think that the possible reason for this is when docker is remapping the port the checkpointing mechansim is not able to break the 
 mapping and hence fails to checkpiont
 
-##Scope
+## Scope
 
 - We were able to checkpoint docker container that is running a single process
 - We are able to checkpoint docker container that is running multiple processes.
 - We are able to resume from checkponit in the same machine or in another machine that
 
-#Experiments
+## Experiments
 
 - Downtime for migrating
 
